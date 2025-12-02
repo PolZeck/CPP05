@@ -6,11 +6,11 @@
 #    By: pol <pol@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/03 15:26:21 by pol               #+#    #+#              #
-#    Updated: 2025/09/03 15:26:24 by pol              ###   ########.fr        #
+#    Updated: 2025/12/02 15:18:05 by pol              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := materia
+NAME := a.out
 
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
@@ -21,11 +21,7 @@ OBJDIR := obj
 INC := -I$(INCDIR)
 
 SRC := \
-	AMateria.cpp \
-	Character.cpp \
-	MateriaSource.cpp \
-	Ice.cpp \
-	Cure.cpp \
+	Bureaucrat.cpp \
 	main.cpp
 
 SRCS := $(addprefix $(SRCDIR)/,$(SRC))
