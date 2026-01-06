@@ -6,11 +6,12 @@
 /*   By: pol <pol@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:18:12 by pol               #+#    #+#             */
-/*   Updated: 2025/12/02 15:19:59 by pol              ###   ########.fr       */
+/*   Updated: 2026/01/06 11:47:35 by pol              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 // --- Exception Implementation ---
 
@@ -24,7 +25,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 	return "Bureaucrat Exception: Grade is too low (must be 150 or lower)";
 }
 
-// --- Orthodox Canonical Form & Parameterized Constructor ---
+// --- Orthodox Canonical AForm & Parameterized Constructor ---
 
 // Parameterized Constructor: Checks grade limits and throws exceptions if invalid
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name)
@@ -93,7 +94,37 @@ void Bureaucrat::decrementGrade()
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
 {
-	// Required format: <name>, bureaucrat grade <grade>.
+	// Required AFormat: <name>, bureaucrat grade <grade>.
 	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << ".";
 	return os;
+}
+
+void Bureaucrat::signAForm(AForm &f)
+{
+	try
+	{
+		// On tente d'appeler beSigned du AFormulaire
+		f.beSigned(*this);
+		// Si aucune exception n'est lancée, on affiche le succès
+		std::cout << _name << " signed " << f.getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		// Si beSigned lance une GradeTooLowException, on affiche l'erreur et la raison
+		std::cout << _name << " couldn't sign " << f.getName()
+				  << " because " << e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const &form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << _name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
