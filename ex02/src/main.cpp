@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pol <pol@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:18:16 by pol               #+#    #+#             */
-/*   Updated: 2026/01/06 11:56:56 by pol              ###   ########.fr       */
+/*   Updated: 2026/01/19 13:25:09 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void run_test(const std::string &title)
 
 int main()
 {
-	// Initialisation de la graine pour le hasard de la robotomie
 	std::srand(time(0));
 
 	try

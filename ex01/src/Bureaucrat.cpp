@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pol <pol@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:18:12 by pol               #+#    #+#             */
-/*   Updated: 2026/01/06 11:29:06 by pol              ###   ########.fr       */
+/*   Updated: 2026/01/19 15:09:50 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+
+// Default Constructor
+Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
+{
+	//no check needed because 150 is a valid grade
+}
 
 // --- Exception Implementation ---
 
@@ -103,14 +109,11 @@ void Bureaucrat::signForm(Form &f)
 {
 	try
 	{
-		// On tente d'appeler beSigned du formulaire
 		f.beSigned(*this);
-		// Si aucune exception n'est lancée, on affiche le succès
 		std::cout << _name << " signed " << f.getName() << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		// Si beSigned lance une GradeTooLowException, on affiche l'erreur et la raison
 		std::cout << _name << " couldn't sign " << f.getName()
 				  << " because " << e.what() << std::endl;
 	}

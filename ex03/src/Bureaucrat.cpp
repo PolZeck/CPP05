@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pol <pol@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:18:12 by pol               #+#    #+#             */
-/*   Updated: 2026/01/06 11:47:35 by pol              ###   ########.fr       */
+/*   Updated: 2026/01/19 14:44:17 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+
+// Default Constructor
+Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
+{
+	//no check needed because 150 is a valid grade
+}
 
 // --- Exception Implementation ---
 

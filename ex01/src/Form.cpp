@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pol <pol@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:20:16 by pol               #+#    #+#             */
-/*   Updated: 2026/01/06 11:21:57 by pol              ###   ########.fr       */
+/*   Updated: 2026/01/19 14:51:12 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+Form::Form() 
+    : _name("Default Form"), 
+      _isSigned(false), 
+      _gradeToSign(150), 
+      _gradeToExecute(150)
+{
+}
 
 const char *Form::GradeTooHighException::what() const throw()
 {

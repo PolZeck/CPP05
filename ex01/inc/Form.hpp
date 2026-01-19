@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pol <pol@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:21:19 by pol               #+#    #+#             */
-/*   Updated: 2026/01/06 11:21:29 by pol              ###   ########.fr       */
+/*   Updated: 2026/01/19 14:49:52 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@ private:
 	bool _isSigned;
 	const int _gradeToSign;
 	const int _gradeToExecute;
-
-public:
+	
+	public:
 	// Exceptions
 	class GradeTooHighException : public std::exception
 	{
-	public:
+		public:
 		virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
-	public:
+		public:
 		virtual const char *what() const throw();
 	};
-
+	
 	// Orthodox Canonical Form
 	Form();
 	Form(const std::string &name, int gradeToSign, int gradeToExecute);

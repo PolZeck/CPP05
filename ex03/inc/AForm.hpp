@@ -26,6 +26,7 @@ private:
 	bool _isSigned;
 	const int _gradeToSign;
 	const int _gradeToExecute;
+	AForm();
 
 public:
 	// Exceptions
@@ -41,7 +42,6 @@ public:
 	};
 
 	// Orthodox Canonical AForm
-	AForm();
 	AForm(const std::string &name, int gradeToSign, int gradeToExecute);
 	AForm(const AForm &other);
 	AForm &operator=(const AForm &other);

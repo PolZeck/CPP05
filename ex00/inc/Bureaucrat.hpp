@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pol <pol@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:18:55 by pol               #+#    #+#             */
-/*   Updated: 2025/12/02 15:20:48 by pol              ###   ########.fr       */
+/*   Updated: 2026/01/19 14:42:26 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,34 +23,28 @@ private:
 	const std::string _name; // Constant name as required
 	int _grade;				 // 1 (highest) to 150 (lowest)
 
-	// Forbidden default constructor (Not part of the Orthodox Canonical Form requirement,
-	// but good practice to enforce named instantiation)
-	Bureaucrat();
-
-public:
+	
+	public:
 	// --- Nested Exception Classes ---
 	// Exception for grades higher than 1
 	class GradeTooHighException : public std::exception
 	{
-	public:
+		public:
 		virtual const char *what() const throw();
 	};
-
+	
 	// Exception for grades lower than 150
 	class GradeTooLowException : public std::exception
 	{
-	public:
+		public:
 		virtual const char *what() const throw();
 	};
-
+	
 	// --- Orthodox Canonical Form Requirements ---
-	// 1. Parameterized Constructor
+	Bureaucrat();
 	Bureaucrat(const std::string &name, int grade);
-	// 2. Copy Constructor
 	Bureaucrat(const Bureaucrat &other);
-	// 3. Assignment Operator
 	Bureaucrat &operator=(const Bureaucrat &other);
-	// 4. Destructor
 	~Bureaucrat();
 
 	// --- Getters ---

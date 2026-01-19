@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pol <pol@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:18:55 by pol               #+#    #+#             */
-/*   Updated: 2026/01/06 11:50:53 by pol              ###   ########.fr       */
+/*   Updated: 2026/01/19 14:44:33 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,22 @@ private:
 	const std::string _name;
 	int _grade;
 
-	Bureaucrat();
-
-public:
+	
+	public:
 	class GradeTooHighException : public std::exception
 	{
-	public:
+		public:
 		virtual const char *what() const throw();
 	};
-
+	
 	class GradeTooLowException : public std::exception
 	{
-	public:
+		public:
 		virtual const char *what() const throw();
 	};
-
+	
 	// Orthodox Canonical AForm
+	Bureaucrat();
 	Bureaucrat(const std::string &name, int grade);
 	Bureaucrat(const Bureaucrat &other);
 	Bureaucrat &operator=(const Bureaucrat &other);

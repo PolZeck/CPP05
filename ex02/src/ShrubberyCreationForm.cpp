@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pol <pol@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:45:37 by pol               #+#    #+#             */
-/*   Updated: 2026/01/06 11:53:41 by pol              ###   ########.fr       */
+/*   Updated: 2026/01/19 13:24:23 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	if (!this->getIsSigned())
-		throw AForm::GradeTooLowException(); // Ou exception spécifique "non signé"
+		throw AForm::GradeTooLowException(); 
 	if (executor.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
 
