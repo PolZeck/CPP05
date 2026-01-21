@@ -6,7 +6,7 @@
 /*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 09:47:04 by pledieu           #+#    #+#             */
-/*   Updated: 2026/01/21 09:48:25 by pledieu          ###   ########.fr       */
+/*   Updated: 2026/01/21 12:24:20 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ public:
     // Inheriting from std::exception to allow try/catch blocks
     class GradeTooHighException : public std::exception
     {
-    public:
-        virtual const char *what() const throw();
+        public:
+            virtual const char *what() const throw();
     };
     class GradeTooLowException : public std::exception
     {
-    public:
-        virtual const char *what() const throw();
+        public:
+            virtual const char *what() const throw();
     };
 
     // --- Orthodox Canonical Form Requirements ---

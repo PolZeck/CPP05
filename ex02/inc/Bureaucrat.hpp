@@ -6,7 +6,7 @@
 /*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:18:55 by pol               #+#    #+#             */
-/*   Updated: 2026/01/21 10:27:04 by pledieu          ###   ########.fr       */
+/*   Updated: 2026/01/21 12:23:54 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ private:
 	class GradeTooHighException : public std::exception
 	{
 		public:
-		virtual const char *what() const throw();
+			virtual const char *what() const throw();
 	};
 	
 	class GradeTooLowException : public std::exception
 	{
 		public:
-		virtual const char *what() const throw();
+			virtual const char *what() const throw();
 	};
 	
 	// Orthodox Canonical AForm

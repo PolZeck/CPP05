@@ -6,7 +6,7 @@
 /*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:21:19 by pol               #+#    #+#             */
-/*   Updated: 2026/01/19 14:49:52 by pledieu          ###   ########.fr       */
+/*   Updated: 2026/01/21 12:23:34 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,23 @@ class Bureaucrat; // Forward declaration
 
 class Form
 {
-private:
-	const std::string _name;
-	bool _isSigned;
-	const int _gradeToSign;
-	const int _gradeToExecute;
+	private:
+		const std::string _name;
+		bool _isSigned;
+		const int _gradeToSign;
+		const int _gradeToExecute;
 	
 	public:
 	// Exceptions
 	class GradeTooHighException : public std::exception
 	{
 		public:
-		virtual const char *what() const throw();
+			virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
 		public:
-		virtual const char *what() const throw();
+			virtual const char *what() const throw();
 	};
 	
 	// Orthodox Canonical Form

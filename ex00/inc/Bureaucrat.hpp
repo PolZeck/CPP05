@@ -6,7 +6,7 @@
 /*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:18:55 by pol               #+#    #+#             */
-/*   Updated: 2026/01/19 14:42:26 by pledieu          ###   ########.fr       */
+/*   Updated: 2026/01/21 12:23:41 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 
 class Bureaucrat
 {
-private:
-	const std::string _name; // Constant name as required
-	int _grade;				 // 1 (highest) to 150 (lowest)
+	private:
+		const std::string _name; // Constant name as required
+		int _grade;				 // 1 (highest) to 150 (lowest)
 
 	
 	public:
@@ -30,14 +30,14 @@ private:
 	class GradeTooHighException : public std::exception
 	{
 		public:
-		virtual const char *what() const throw();
+			virtual const char *what() const throw();
 	};
 	
 	// Exception for grades lower than 150
 	class GradeTooLowException : public std::exception
 	{
 		public:
-		virtual const char *what() const throw();
+			virtual const char *what() const throw();
 	};
 	
 	// --- Orthodox Canonical Form Requirements ---
