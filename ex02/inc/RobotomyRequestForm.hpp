@@ -6,7 +6,7 @@
 /*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:46:08 by pol               #+#    #+#             */
-/*   Updated: 2026/01/19 14:12:10 by pledieu          ###   ########.fr       */
+/*   Updated: 2026/01/21 09:39:03 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class RobotomyRequestForm : public AForm
 {
 	private:
 		const std::string _target;
-		RobotomyRequestForm();
-
+		
 	public:
+		RobotomyRequestForm();
 		RobotomyRequestForm(const std::string &target);
 		RobotomyRequestForm(const RobotomyRequestForm &other);
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
