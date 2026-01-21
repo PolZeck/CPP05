@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pol <pol@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:18:16 by pol               #+#    #+#             */
-/*   Updated: 2026/01/06 12:28:36 by pol              ###   ########.fr       */
+/*   Updated: 2026/01/20 14:24:31 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 	Bureaucrat boss("The Boss", 1);
 	AForm *rrf;
 
-	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
 	if (rrf)
 	{
 		boss.signAForm(*rrf);

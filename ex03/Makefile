@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pol <pol@student.42.fr>                    +#+  +:+       +#+         #
+#    By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/03 15:26:21 by pol               #+#    #+#              #
-#    Updated: 2026/01/06 12:18:43 by pol              ###   ########.fr        #
+#    Updated: 2026/01/21 09:44:28 by pledieu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f home_shrubbery
+	rm -f Bender_shrubbery
 
 re: fclean all
 

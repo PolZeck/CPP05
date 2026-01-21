@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pol <pol@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 12:18:19 by pol               #+#    #+#             */
-/*   Updated: 2026/01/06 12:22:47 by pol              ###   ########.fr       */
+/*   Updated: 2026/01/20 12:57:15 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,15 @@ Intern::~Intern() {}
 
 AForm *Intern::makeForm(std::string name, std::string target)
 {
-	// Tableau des noms de formulaires valides
 	std::string formNames[] = {
 		"shrubbery creation",
 		"robotomy request",
 		"presidential pardon"};
 
 	int i = 0;
-	// On cherche l'index correspondant au nom
 	while (i < 3 && formNames[i] != name)
 		i++;
 
-	// On utilise un switch sur l'index (beaucoup plus propre que des if/else imbriqués)
 	switch (i)
 	{
 	case 0:
