@@ -6,7 +6,7 @@
 /*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:18:55 by pol               #+#    #+#             */
-/*   Updated: 2026/01/19 14:44:33 by pledieu          ###   ########.fr       */
+/*   Updated: 2026/01/21 10:27:04 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ private:
 
 	void executeForm(AForm const &form) const;
 
-	void signAForm(AForm &f);
+	void signForm(AForm &f);
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);

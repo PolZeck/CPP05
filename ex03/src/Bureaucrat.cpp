@@ -6,7 +6,7 @@
 /*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:18:12 by pol               #+#    #+#             */
-/*   Updated: 2026/01/20 13:38:39 by pledieu          ###   ########.fr       */
+/*   Updated: 2026/01/21 10:28:54 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
 	return os;
 }
 
-void Bureaucrat::signAForm(AForm &f)
+void Bureaucrat::signForm(AForm &f)
 {
 	try
 	{

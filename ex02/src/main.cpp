@@ -6,7 +6,7 @@
 /*   By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:18:16 by pol               #+#    #+#             */
-/*   Updated: 2026/01/19 13:25:09 by pledieu          ###   ########.fr       */
+/*   Updated: 2026/01/21 10:26:29 by pledieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,59 +15,76 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-
-void run_test(const std::string &title)
-{
-	std::cout << "\n========================================" << std::endl;
-	std::cout << "TEST: " << title << std::endl;
-	std::cout << "========================================" << std::endl;
-}
+#include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-	std::srand(time(0));
+	srand(time(NULL));
 
+	std::cout << "-- Creation of bureaucrat --" << std::endl;
 	try
 	{
-		Bureaucrat boss("The Boss", 1);
-		Bureaucrat mid("Mid-Level", 45);
-		Bureaucrat intern("Intern", 140);
+		Bureaucrat boss("Boss", 1);
+		Bureaucrat manager("Manager", 50);
+		Bureaucrat intern("Intern", 150);
 
-		// --- TEST 1 : Shrubbery (145 sign, 137 exec) ---
-		run_test("Shrubbery Creation (home)");
+		std::cout << "\n" << boss << std::endl;
+		std::cout << manager << std::endl;
+		std::cout << intern << "\n" << std::endl;
+
+		std::cout << "-- Creation of the forms --" << std::endl;
 		ShrubberyCreationForm shrub("home");
-		std::cout << shrub << std::endl;
-
-		intern.signAForm(shrub);   // OK (140 < 145)
-		intern.executeForm(shrub); // KO (140 > 137)
-		mid.executeForm(shrub);	   // OK (45 < 137)
-
-		// --- TEST 2 : Robotomy (72 sign, 45 exec) ---
-		run_test("Robotomy Request (Bender)");
+		ShrubberyCreationForm shrub2("home boss");
+		std::cout << shrub << "\n" << std::endl;
 		RobotomyRequestForm robo("Bender");
-
-		intern.signAForm(robo); // KO (140 > 72)
-		mid.signAForm(robo);	// OK (45 < 72)
-		mid.executeForm(robo);	// OK (45 == 45) -> 50% de chance
-		boss.executeForm(robo); // OK (1 < 45)
-
-		// --- TEST 3 : Presidential Pardon (25 sign, 5 exec) ---
-		run_test("Presidential Pardon (Arthur Dent)");
+		std::cout << robo << "\n" << std::endl;
 		PresidentialPardonForm pardon("Arthur Dent");
+		std::cout << pardon << "\n" << std::endl;
 
-		mid.signAForm(pardon);	  // KO (45 > 25)
-		boss.signAForm(pardon);	  // OK (1 < 25)
-		mid.executeForm(pardon);  // KO (45 > 5)
-		boss.executeForm(pardon); // OK (1 < 5)
+		std::cout << "-- Execute without signature --" << std::endl;
+		try
+		{
+			boss.executeForm(shrub);
+		}
+		catch (std::exception &e)
+		{
+			std::cout << "Exception: " << e.what() << std::endl;
+		}
 
-		run_test("Execution sans signature");
-		PresidentialPardonForm fake("Criminel");
-		boss.executeForm(fake);
+		std::cout << "\n -- Signature --" << std::endl;
+		intern.signForm(shrub);		// KO
+		manager.signForm(pardon);	// KO
+		manager.signForm(robo);		// OK but can't execute
+		manager.signForm(shrub);	// OK
+		boss.signForm(shrub2);		// OK
+		boss.signForm(robo);		// OK
+		boss.signForm(pardon);		// OK
+
+		std::cout << "\n-- Execution of the forms --" << std::endl;
+
+		std::cout << "\nIntern execution: " << std::endl;
+		intern.executeForm(shrub);		// KO
+
+		std::cout << "\nManager execution: " << std::endl;
+		manager.executeForm(shrub);		// OK -> file _shrubbery
+		manager.executeForm(robo);		// KO
+
+		std::cout << "\nBoss execution: " << std::endl;
+		boss.executeForm(shrub2);
+		boss.executeForm(robo);			// OK
+		boss.executeForm(robo);			// OK
+		boss.executeForm(robo);			// OK
+		boss.executeForm(robo);			// OK
+		boss.executeForm(robo);			// OK
+		boss.executeForm(pardon);		// OK
+
+		std::cout << std::endl;
 	}
-	catch (std::exception &e)
+	catch(const std::exception& e)
 	{
-		std::cerr << "Main Exception Catch: " << e.what() << std::endl;
+		std::cout << e.what() << '\n';
 	}
-
-	return 0;
 }

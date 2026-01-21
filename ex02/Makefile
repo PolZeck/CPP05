@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pol <pol@student.42.fr>                    +#+  +:+       +#+         #
+#    By: pledieu <pledieu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/03 15:26:21 by pol               #+#    #+#              #
-#    Updated: 2026/01/06 12:00:32 by pol              ###   ########.fr        #
+#    Updated: 2026/01/21 10:33:00 by pledieu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f home_shrubbery
+	rm -f "home boss_shrubbery" "home_shrubbery"
 
 re: fclean all
 
